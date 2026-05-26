@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Weather Fashion Simulator</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+</head>
+<body>
+
+    <!--Instructions-->
+
+<div
+    class="instructions-popup"
+    id="instructions-popup"
+>
+
+    <div class="instructions-content">
+
+        <h1>
+            How To Play
+        </h1>
+
+        <div class="instructions-text">
+
+            <p>
+                1. A random weather will generate.
+            </p>
+
+            <p>
+                2. Click the door to go outside and check the weather.
+            </p>
+
+            <p>
+                3. Go back inside and open the closet.
+            </p>
+
+            <p>
+                4. Pick the best outfit for the weather.
+            </p>
+
+            <p>
+                5. Go back outside and press
+                "Grade Outfit".
+            </p>
+
+            <p>
+                6. Try to get the perfect outfit!
+            </p>
+
+        </div>
+
+        <button
+            class="game-btn"
+            id="start-game"
+        >
+            Start Game
+        </button>
+
+    </div>
+
+</div>
+
+    <div class="game">
+
+        <!--Room-->
+
+        <section
+            class="scene active"
+            id="room-scene"
+        >
+
+            <div class="wall"></div>
+
+            <div class="baseboard"></div>
+
+            <div class="floor"></div>
+
+            <div
+                class="closet-door"
+                id="open-closet"
+            >
+                Open Closet
+            </div>
+
+            <div
+                class="front-door"
+                id="go-outside"
+            >
+                Go Outside
+            </div>
+
+            <div class="window">
+
+                <div class="vertical"></div>
+
+                <div class="horizontal"></div>
+
+                <div class="curtain left-curtain"></div>
+
+                <div class="curtain right-curtain"></div>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h2 id="weather-name">
+                    Weather
+                </h2>
+
+                <p id="weather-temp">
+                    72°F
+                </p>
+
+            </div>
+
+            <img
+                class="room-character"
+                id="room-character"
+                src="assets/character.png"
+            >
+
+        </section>
+
+        <!--Closet -->
+
+        <section
+            class="scene"
+            id="closet-scene"
+        >
+
+            <div class="closet-container">
+
+                <h1 class="closet-title">
+                    Choose Your Outfit
+                </h1>
+
+                <div class="outfit-grid">
+
+                    <div
+                        class="outfit-card"
+                        data-outfit="summer"
+                    >
+
+                        <img src="assets/summer.png">
+
+                        <p>Summer</p>
+
+                    </div>
+
+                    <div
+                        class="outfit-card"
+                        data-outfit="rain"
+                    >
+
+                        <img src="assets/rain.png">
+
+                        <p>Rain</p>
+
+                    </div>
+
+                    <div
+                        class="outfit-card"
+                        data-outfit="fall"
+                    >
+
+                        <img src="assets/fall.png">
+
+                        <p>Fall</p>
+
+                    </div>
+
+                    <div
+                        class="outfit-card"
+                        data-outfit="winter"
+                    >
+
+                        <img src="assets/winter.png">
+
+                        <p>Winter</p>
+
+                    </div>
+
+                </div>
+
+                <div class="closet-buttons">
+
+                    <button
+                        class="game-btn"
+                        id="back-room"
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        class="game-btn"
+                        id="confirm-outfit"
+                    >
+                        Wear Outfit
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--Outside-->
+
+        <section
+            class="scene"
+            id="outside-scene"
+        >
+
+            <div class="outside-overlay"></div>
+
+            <div class="sun" id="sun"></div>
+
+            <div class="cloud cloud1"></div>
+
+            <div class="cloud cloud2"></div>
+
+            <div class="cloud cloud3"></div>
+
+            <div class="rain" id="rain"></div>
+
+            <div class="snow" id="snow"></div>
+
+            <div class="weather-panel">
+
+                <h1 id="outside-icon">
+                    ☀️
+                </h1>
+
+                <h2 id="outside-weather">
+                    Sunny
+                </h2>
+
+                <p id="outside-temp">
+                    82°F
+                </p>
+
+            </div>
+
+            <img
+                class="outside-character"
+                id="outside-character"
+                src="assets/character.png"
+            >
+
+            <button
+                class="game-btn"
+                id="back-inside"
+                style="position:absolute; top:30px; right:30px; z-index:15;"
+            >
+                Go Back Inside
+            </button>
+
+            <button
+                class="game-btn"
+                id="grade-fit"
+                style="position:absolute; bottom:40px; left:50%; transform:translateX(-50%); z-index:15;"
+            >
+                Grade Outfit
+            </button>
+
+        </section>
+
+        <!--Grade -->
+
+        <div class="popup" id="popup">
+
+            <div class="popup-content">
+
+                <h1 id="grade-title">
+                    Great Outfit!
+                </h1>
+
+                <p id="grade-message">
+                    You dressed perfectly.
+                </p>
+
+                <button
+                    class="game-btn"
+                    id="play-again"
+                >
+                    Play Again
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
